@@ -21,7 +21,9 @@
         Repeatedly accessing a row in recent DRAM devices can cause bit flips in adjacent rows, and attacks <a href="http://googleprojectzero.blogspot.com/2015/03/exploiting-dram-rowhammer-bug-to-gain.html">demonstrated and documented</a> by the Google Project Zero team have used this behavior to gain kernel prileges on x86-64 Linux machines (from unprivileged user-land).
       </p>
       <p>
-        The x86 exploit utilizes repeated CLFUSH instructions to induce bit-flipping and gain read-write access to all of physical memory. However, the Google team believes this vulnerability to exist on other machines and operating systems. This is because the vulnerability is a result of the increasing density of DRAM devices; since the individual cells are packed closer together, the electrical charge sent to one row has a greater chance of effecting the cells in adjacent rows as well.
+        The x86 exploit utilizes repeated CLFUSH instructions to induce bit-flipping and gain read-write access to all of physical memory.
+        However, the Google team believes this vulnerability exists on other machines and operating systems.
+        This is because the vulnerability is a result of the increasing density of DRAM devices; since the individual cells are packed closer together, the electrical charge sent to one row has a greater chance of effecting the cells in adjacent rows as well.
       </p>
       <hr />
       <h2>Further reading</h2>
@@ -32,7 +34,7 @@
       </ul>
       <div class="site-footer">
         <h3>This site</h3>
-        <p>The source of this site is MIT Licensed. The <a href="https://twitter.com/JoshDeanBailey/status/574981146028593153">logo</a> is by <a href="http://thedirtygiraffe.blogspot.com/">Josh Bailey</a>.</p>
+        <p>The <a href="https://github.com/dirk/rowhammer-site">source</a> of this site is <a href="https://github.com/dirk/rowhammer-site/blob/master/LICENSE">MIT licensed</a>. The <a href="https://twitter.com/JoshDeanBailey/status/574981146028593153">logo</a> is by <a href="http://thedirtygiraffe.blogspot.com/">Josh Bailey</a>.</p>
       </div>
     </div>
   </body>
