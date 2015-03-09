@@ -1,0 +1,21 @@
+
+html {font-size: 62.5%; font-family: Helvetica, Arial, sans-serif;}
+* {margin: 0; padding: 0;}
+
+.main {max-width: 60rem; padding: 10rem 2rem 8rem; margin: 0 auto;}
+
+.site-logo {float: left; margin-left: -18rem;}
+
+/* Typography */
+p, li {font-size: 1.5rem; line-height: 1.6; margin: 0 0 1em;}
+ul, ol {padding: 0 0 0 2em; margin: 0 0 1em;}
+li {margin-bottom: 0.5em;}
+h1 {font-size: 3rem; margin: 0 0 0.5em;}
+h2 {font-size: 2rem; margin: 0 0 1em;}
+h3 {font-size: 1.5rem; text-transform: uppercase; margin: 0 0 1em; color: #888;}
+a {color: #f00;}
+a:visited {color: #c00;}
+
+hr {border: none; border-bottom: 1px solid #ddd; margin: 1rem 0 2rem;}
+
+.site-footer {margin: 4em 0 0; padding: 2em 0 0; border-top: 1px solid #ddd;}

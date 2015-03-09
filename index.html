@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Rowhammer</title>
+
+    <link rel="stylesheet" href="/css/style.css" type='text/css'>
+    <!-- <link rel="icon" type="image/png" href="/favicon.png" /> -->
+  </head>
+  <body>
+    <div class="main">
+      <img class="site-logo" src="/images/logo.png" alt="" width="148.5" height="147" />
+      <h1 class="site-heading">The Rowhammer Bug</h1>
+      <p>
+        Rowhammer is a vulnerability in DRAM devices that allows for attacks such as privilege escalation and sandbox escaping.
+        Repeatedly accessing a row in recent DRAM devices can cause bit flips in adjacent rows, and attacks <a href="http://googleprojectzero.blogspot.com/2015/03/exploiting-dram-rowhammer-bug-to-gain.html">demonstrated and documented</a> by the Google Project Zero team have used this behavior to gain kernel prileges on x86-64 Linux machines (from unprivileged user-land).
+      </p>
+      <p>
+        The x86 exploit utilizes repeated CLFUSH instructions to induce bit-flipping and gain read-write access to all of physical memory. However, the Google team believes this vulnerability to exist on other machines and operating systems. This is because the vulnerability is a result of the increasing density of DRAM devices; since the individual cells are packed closer together, the electrical charge sent to one row has a greater chance of effecting the cells in adjacent rows as well.
+      </p>
+      <hr />
+      <h2>Further reading</h2>
+      <ul>
+        <li><a href="http://googleprojectzero.blogspot.com/2015/03/exploiting-dram-rowhammer-bug-to-gain.html">Exploiting the DRAM rowhammer bug to gain kernel privileges</a> (Google, 9 March 2015)</li>
+        <li><a href="http://users.ece.cmu.edu/~yoonguk/papers/kim-isca14.pdf">Flipping Bits in Memory Without Accessing Them: An Experimental Study of DRAM Disturbance Errors</a> (Yoongu Kim et al, CMU)</li>
+        <li><a href="https://github.com/google/rowhammer-test"><code>rowhammer-test</code> program</a> (Google, 19 January 2015)</li>
+      </ul>
+      <div class="site-footer">
+        <h3>This site</h3>
+        <p>The source of this site is MIT Licensed. The <a href="https://twitter.com/JoshDeanBailey/status/574981146028593153">logo</a> is by <a href="http://thedirtygiraffe.blogspot.com/">Josh Bailey</a>.</p>
+      </div>
+    </div>
+  </body>
+</html>
