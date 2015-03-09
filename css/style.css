@@ -19,3 +19,8 @@ a:visited {color: #c00;}
 hr {border: none; border-bottom: 1px solid #ddd; margin: 1rem 0 2rem;}
 
 .site-footer {margin: 4em 0 0; padding: 2em 0 0; border-top: 1px solid #ddd;}
+
+@media (max-width: 1023px) {
+  .main {padding-top: 4rem;}
+  .site-logo {display: block; float: none; margin: 0 auto 4rem;}
+}
