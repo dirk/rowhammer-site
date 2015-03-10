@@ -23,23 +23,38 @@
       <p>
         The x86 exploit utilizes repeated <code>CLFUSH</code> instructions to induce bit-flipping and gain read-write access to all of physical memory.
         However, the Google team believes this vulnerability exists on other machines and operating systems.
-        This is because the vulnerability is a result of the increasing density of DRAM devices; since the individual cells are packed closer together, the electrical charge sent to one row has a greater chance of affecting the cells in adjacent rows as well.
+        This is because the vulnerability is a result of the increasing density of DRAM devices; since the individual cells are packed closer together, signals sent to one row have a greater chance of affecting cells in adjacent rows as well.
       </p>
       <h2>What's vulnerable?</h2>
       <p>
         Specific vulnerabilites&mdash;in DRAM devices, CPU memory controllers, and BIOS devices&mdash;are <strong>not yet public</strong>.
         However, caution is advisable, as always, in running any binaries.
         Furthermore the Google team has speculated that this vulnerability may even be exploitable in both OS-level virtualized environments (x86 virtualization offers no control over <code>CFLUSH</code> instructions) and application-level virtualized code.
+        However, <a href="http://blog.erratasec.com/2015/03/some-notes-on-dram-rowhammer.html">others have doubted</a> the effectiveness of the attack in virtualized environments due to the additional indirection of the virtualization layer's own page table mapping.
+      </p>
+      <p>
         Similar bit-flipping attacks were <a href="https://www.cs.princeton.edu/~appel/papers/memerr.pdf">demonstrated in Java</a> in 2003 by Govindavajhala and Appel at Princeton. Certain JavaScript features, such as typed arrays (effectively contiguous byte arrays), also seem likely to be exploitable.
       </p>
       <h2>Mitigations</h2>
       <p>
-        ECC memory is likely much less vulnerable to this attack.
+        ECC memory is potentially less vulnerable to this attack.
         Additionally the Google team found that efforts may be in place in LPDDR4 to mitigate the vulnerability, and that one DRAM vendor may have already integrated technology to protect against rowhammer within their DRAM devices.
       </p>
       <p>
         However, given the that this vulnerability is still extremely new, the best course of action is to <strong>run your own tests</strong> of your system and <strong>exercise extra caution</strong> in which binaries you execute on your system.
       </p>
+      <h2>Recent Developments</h2>
+      <ul>
+        <li>
+          <h4>10 March 2015</h4>
+          <p>
+            Robert Graham of Errata Security has published a <a href="http://blog.erratasec.com/2015/03/some-notes-on-dram-rowhammer.html">succinct-yet-detailed summary</a> of the how the rowhammer exploit works, potential mitigation via ECC memory and virtualization, and high-level analysis of the potential for browser-based exploits through JavaScript (see the "Update" section at the bottom of their post).
+          </p>
+          <p>
+            Dan Goodin at Ars Technica has also posted an <a href="http://arstechnica.com/security/2015/03/cutting-edge-hack-gives-super-user-status-by-exploiting-dram-weakness/">overview and analysis</a> of the attack.
+          </p>
+        </li>
+      </ul>
       <hr />
       <h2>Further reading</h2>
       <ul>
